@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">MacPad logo</title>
+  <desc id="desc">An original indigo editor page with a focused caret</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6D5EF7"/>
+      <stop offset="1" stop-color="#2948C7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#111936" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect x="40" y="40" width="944" height="944" rx="214" fill="url(#background)"/>
+  <g filter="url(#shadow)">
+    <path d="M276 190h330l142 142v502H276c-35 0-64-29-64-64V254c0-35 29-64 64-64Z" fill="#F8F9FF"/>
+    <path d="M606 190v118c0 20 16 36 36 36h106" fill="#DCE3FF"/>
+    <path d="M606 190v118c0 20 16 36 36 36h106" fill="none" stroke="#B3BEF0" stroke-width="12"/>
+    <rect x="322" y="394" width="240" height="24" rx="12" fill="#B7C1F4"/>
+    <rect x="322" y="466" width="348" height="24" rx="12" fill="#D0D7FA"/>
+    <rect x="322" y="538" width="282" height="24" rx="12" fill="#D0D7FA"/>
+    <rect x="322" y="610" width="200" height="24" rx="12" fill="#D0D7FA"/>
+    <rect x="622" y="458" width="18" height="216" rx="9" fill="#4C5DDB"/>
+  </g>
+</svg>

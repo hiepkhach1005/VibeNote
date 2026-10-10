@@ -1,0 +1,4 @@
+interface:
+  display_name: "MacPad Editor"
+  short_description: "Build the complete native editor and parity workflow"
+  default_prompt: "Use $macpad-editor to implement a MacPad feature with Notepad++ parity, native macOS behavior, tests, and tracking updates."
