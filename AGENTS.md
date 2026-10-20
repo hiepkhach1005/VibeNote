@@ -1,4 +1,4 @@
-# MacPad - AI Project Rules
+# VibeNote - AI Project Rules
 
 ## Mục tiêu
 
@@ -10,8 +10,8 @@ Xây dựng một trình soạn thảo văn bản và mã nguồn native trên m
 - Read `docs/parity/FEATURE_PARITY_MATRIX.md` before choosing a feature.
 - Read `docs/parity/MENU_PARITY_MATRIX.md` before adding or moving a command.
 - Update `docs/parity/FEATURE_TRACKER.csv` and `docs/parity/IMPLEMENTATION_LOG.md` after each parity slice.
-- Use `skills/macpad-editor/SKILL.md` for normal editor/domain/UI work.
-- Use `skills/macpad-liquid-glass/SKILL.md` only for Liquid Glass/material/chrome work.
+- Use `skills/vibenote-editor/SKILL.md` for normal editor/domain/UI work.
+- Use `skills/vibenote-liquid-glass/SKILL.md` only for Liquid Glass/material/chrome work.
 
 ## Quy tắc bắt buộc
 
@@ -27,7 +27,7 @@ Xây dựng một trình soạn thảo văn bản và mã nguồn native trên m
 10. Sau mỗi vertical slice phải build/test và cập nhật tài liệu trạng thái.
 11. Giữ cấu trúc và luồng thao tác quen thuộc của Notepad++, nhưng dùng Command shortcut và component native macOS.
 12. Dùng Liquid Glass có tiết chế cho chrome/navigation; không phủ Liquid Glass lên vùng code/text chính.
-13. MacPad chỉ được chạy một application instance; mọi tài liệu mở thêm phải đi vào các tab trong cùng cửa sổ MacPad.
+13. VibeNote chỉ được chạy một application instance; mọi tài liệu mở thêm phải đi vào các tab trong cùng cửa sổ VibeNote.
 
 ## Quy ước code
 

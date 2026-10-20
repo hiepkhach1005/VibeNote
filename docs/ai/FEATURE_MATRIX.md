@@ -11,7 +11,7 @@ Legend: `[x] DONE`, `[~] IN_PROGRESS`, `[ ] TODO`, `[-] DEFERRED`, `[!] BLOCKED`
 - [x] Native menu bar
 - [x] Native toolbar
 - [x] Light/Dark appearance
-- [x] Multiple tabs in one MacPad application instance
+- [x] Multiple tabs in one VibeNote application instance
 - [x] New/Open/Save/Save As/Close
 - [x] Basic status bar
 - [x] Line-number gutter
@@ -96,7 +96,7 @@ Legend: `[x] DONE`, `[~] IN_PROGRESS`, `[ ] TODO`, `[-] DEFERRED`, `[!] BLOCKED`
 - [ ] Auto-completion
 - [ ] User Defined Language
 - [~] Style Configurator (global text settings and presets; per-language scopes pending)
-- [~] Themes (MacPad System, Light, Dark, Dracula, Nord, Solarized, One Dark and Custom)
+- [~] Themes (VibeNote System, Light, Dark, Dracula, Nord, Solarized, One Dark and Custom)
 
 ## Views and workflow
 

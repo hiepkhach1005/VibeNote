@@ -13,14 +13,14 @@
 - Added previous-match search, routed undo/redo through the selected editor, and added save/discard confirmation for modified documents.
 - Added JSON-backed document recovery/session restore and a native `.app` packaging script.
 - Added automatic `.icns` generation from the original vector logo.
-- Fixed packaged-app launch by adding an explicit AppKit application entry point; verified one window is created after `open dist/MacPad.app`.
+- Fixed packaged-app launch by adding an explicit AppKit application entry point; verified one window is created after `open dist/VibeNote.app`.
 - Added parity master prompt, resume prompt, Notepad++ baseline, detailed feature/menu matrices, CSV tracker and append-only parity implementation log.
-- Added and populated `macpad-editor` and `macpad-liquid-glass` project skills.
+- Added and populated `vibenote-editor` and `vibenote-liquid-glass` project skills.
 - Skill validator was attempted but is blocked by missing Python `yaml` module in the current environment; manual checks found no template TODOs in the completed skills.
 - Re-ran debug and release builds after the final source changes: PASS.
 - Audited the official Notepad++ repository structure: `PowerEditor`, `scintilla`, `lexilla` and regex are better conceptual boundaries than a web-style BE/FE split.
-- Removed project-local `macpad-backend` and `macpad-frontend` skills.
-- Added consolidated `macpad-editor` skill and focused `macpad-liquid-glass` skill.
+- Removed project-local `vibenote-backend` and `vibenote-frontend` skills.
+- Added consolidated `vibenote-editor` skill and focused `vibenote-liquid-glass` skill.
 - Validated both skill metadata with Ruby YAML parsing, confirmed no stale BE/FE references outside historical logs, and re-ran `swift build`: PASS.
 - Implemented FILE-009 reload-from-disk and FILE-010 external file-change detection with safe Reload/Keep Local prompts.
 - Added `FileSnapshot`, corrected modified-tab title rendering, added reload menu command and snapshot unit coverage.
@@ -51,12 +51,12 @@
 
 ## 2026-08-19 - Single-instance multi-tab continuation
 
-- Continued the requested Notepad++-familiar workflow: one MacPad application instance, many documents as tabs in that same window.
+- Continued the requested Notepad++-familiar workflow: one VibeNote application instance, many documents as tabs in that same window.
 - Added `SingleInstanceCoordinator`, `LSMultipleInstancesProhibited`, duplicate URL detection and AppKit open-event routing.
 - Reworked the tab surface into an explicit horizontally scrollable AppKit tab strip above the native `NSTabViewController` editor host.
 - Tab actions currently include select, close, save, pin/unpin, close all but this, close left/right and close unchanged; Next/Previous Tab commands are wired.
 - `swift build`: PASS; `swift build -c release`: PASS; `./scripts/build-app.sh`: PASS.
-- Packaged smoke verification: repeated open commands kept one MacPad process; debug run confirmed multiple editor/tab records. Full visual Light/Dark and accessibility acceptance remains pending when the desktop session is unlocked.
+- Packaged smoke verification: repeated open commands kept one VibeNote process; debug run confirmed multiple editor/tab records. Full visual Light/Dark and accessibility acceptance remains pending when the desktop session is unlocked.
 - Updated parity matrix, CSV tracker, menu matrix, implementation log, project state, backlog, known issues and changelog.
 
 ## 2026-08-19 - Tab visibility correction
@@ -80,10 +80,10 @@
 
 - Feature IDs: SETTINGS-001, SETTINGS-003, LANGUAGE-002, PLATFORM-002.
 - User request: add font family, font size, text-related color settings and commonly used editor themes such as Dracula.
-- MacPad behavior added: native Text Settings window with live font family/size changes, editor foreground/background/selection/smart-highlighting colors, comment/string/number/keyword/heading colors, and MacPad System, Dracula, Nord, Solarized, One Dark and Custom presets.
+- VibeNote behavior added: native Text Settings window with live font family/size changes, editor foreground/background/selection/smart-highlighting colors, comment/string/number/keyword/heading colors, and VibeNote System, Dracula, Nord, Solarized, One Dark and Custom presets.
 - Settings are versioned through `TextSettingsStore` and persisted in UserDefaults; one settings value is applied to every open editor tab.
 - Liquid Glass scope: header material is used only for the Text Settings window chrome; the editor/text surface remains opaque for readability.
-- Files changed: `Sources/MacPad/TextSettings.swift`, `Sources/MacPad/TextSettingsWindowController.swift`, `Sources/MacPad/MainWindowController.swift`, `Sources/MacPad/EditorViewController.swift`, `Sources/MacPad/LanguageServices.swift`, tests and parity/AI tracking files.
+- Files changed: `Sources/VibeNote/TextSettings.swift`, `Sources/VibeNote/TextSettingsWindowController.swift`, `Sources/VibeNote/MainWindowController.swift`, `Sources/VibeNote/EditorViewController.swift`, `Sources/VibeNote/LanguageServices.swift`, tests and parity/AI tracking files.
 - Tests/build: `swift build` PASS; `swift test` remains blocked by the active Command Line Tools environment without XCTest; packaged app verification remains next.
 - Before status: Preferences was a placeholder and syntax colors were fixed in code.
 - After status: global text appearance is configurable and persisted; parity remains `PARITY_IN_PROGRESS` because per-language Style Configurator scopes, import/export and full accessibility review remain.
@@ -102,8 +102,8 @@
 
 - Feature IDs: SETTINGS-001, SETTINGS-003, PLATFORM-002.
 - User request: add explicit Light/Dark text themes and make the Light editor background clean white instead of gray.
-- MacPad behavior added: Text Settings now lists `Light` and `Dark` separately from adaptive `MacPad System`; Light pins a white editor and gutter surface, while Dark pins a dark editor and gutter surface.
-- Files changed: `Sources/MacPad/TextSettings.swift`, `Sources/MacPad/LineNumberRulerView.swift`, tests and parity/AI tracking files.
+- VibeNote behavior added: Text Settings now lists `Light` and `Dark` separately from adaptive `VibeNote System`; Light pins a white editor and gutter surface, while Dark pins a dark editor and gutter surface.
+- Files changed: `Sources/VibeNote/TextSettings.swift`, `Sources/VibeNote/LineNumberRulerView.swift`, tests and parity/AI tracking files.
 - Verification: `swift build`, `swift build -c release` and `./scripts/build-app.sh` PASS; explicit Light/Dark unit coverage was added. `swift test` remains blocked by the active Command Line Tools environment without XCTest.
 - Remaining: full appearance/accessibility matrix and per-language style scopes.
 
@@ -136,7 +136,7 @@
 ## 2026-08-22 - Finder drag/drop file opening
 
 - Feature ID: FILE-015.
-- Added native file drop handling to the main window shell and `NSTextView` surface so one or many Finder files open as tabs in the same MacPad window.
+- Added native file drop handling to the main window shell and `NSTextView` surface so one or many Finder files open as tabs in the same VibeNote window.
 - Files are accepted independently of extension, duplicate URLs select the existing tab, directories are ignored and files that cannot be read continue through the existing safe load error path.
 - Added payload tests for extensionless files, deduplication and directory rejection.
 - `swift build`: PASS. `swift test`: BLOCKED because the active Command Line Tools environment does not provide XCTest.
@@ -155,7 +155,7 @@
 
 - Feature ID: FILE-015.
 - Screenshot acceptance still showed path insertion from both Finder and VS Code.
-- Runtime evidence: active MacPad PID 3356 started at 17:46:40 while the corrected packaged executable was built at 18:02:14, confirming the test was running an older in-memory binary.
+- Runtime evidence: active VibeNote PID 3356 started at 17:46:40 while the corrected packaged executable was built at 18:02:14, confirming the test was running an older in-memory binary.
 - Additional hardening: external plain absolute-path payloads from VS Code Explorer are resolved only during drag operations; plain path paste remains text. `acceptableDragTypes`, `performDragOperation` and `readSelection(from:type:)` now all prevent file payloads from reaching text insertion.
 - Root window/chrome and editor surfaces share the same Finder/VS Code path decoder.
 - Verification: `swift build` PASS and `./scripts/build-app.sh` PASS. `swift test` remains blocked solely by missing XCTest in the selected Command Line Tools environment.
@@ -178,7 +178,7 @@
 ## 2026-08-22 - Automatic close checkpoint and session restore
 
 - Feature IDs: FILE-007, FILE-014.
-- User requested Chrome/Notepad++-style close behavior for the main MacPad window: no save dialog, automatic temporary recovery and exact restoration on next launch.
+- User requested Chrome/Notepad++-style close behavior for the main VibeNote window: no save dialog, automatic temporary recovery and exact restoration on next launch.
 - Main-window `windowShouldClose` now calls `persistSession()`, requests app termination and returns without showing a document-save alert. `applicationShouldTerminate` also checkpoints and returns `.terminateNow` for Cmd-Q/other app termination paths.
 - Session restoration now treats the persisted JSON session as authoritative for every tab, not only modified/Untitled tabs, preserving exact content, encoding, EOL, language, modified state and selected tab.
 - Individual tab close actions still use Save/Cancel/Discard to protect a note closed intentionally.
@@ -207,3 +207,11 @@
 - Ran Gitleaks against the Git candidate file snapshot and reviewed findings; no actual credentials were identified.
 - Checked README relative links and image references. Application behavior was not changed and app build/test suites were not run for this documentation/publication task.
 - Git commits use the account's GitHub noreply address.
+
+## 2026-10-20 — Rename MacPad to VibeNote and adopt Vibe icon family
+
+- Renamed product, Swift target/module, test target, skills, docs and bundle id (`com.macpad.editor` → `com.vibenote.VibeNote`); the outer folder is now `VibeNote`.
+- Settings/session keys now use the `VibeNote` prefix, so preferences saved by older MacPad builds are not migrated.
+- Added the shared Vibe icon system in `assets/design/vibe-icons/` (Apple-native set adopted; Material set kept as an alternative) and set `assets/design/AppIcon-1024.png` to the VibeNote icon.
+- `scripts/build-app.sh` now resolves the binary via `swift build --show-bin-path` instead of a hard-coded arch path.
+- `./scripts/build-app.sh`: PASS. `swift test`: 20 tests, 1 failure (`testDocumentStorePreservesCRLFAndBOM`, `"lf"` vs `"crlf"`); the same failure reproduces on the pre-rename commit, so it is pre-existing and not caused by the rename.

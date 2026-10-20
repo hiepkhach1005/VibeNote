@@ -1,0 +1,4 @@
+interface:
+  display_name: "VibeNote Liquid Glass"
+  short_description: "Apply Liquid Glass to native editor chrome"
+  default_prompt: "Use $vibenote-liquid-glass to design or implement native Liquid Glass chrome with accessibility fallbacks."

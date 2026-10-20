@@ -1,7 +1,7 @@
 # Project State
 
 - Last updated: 2026-08-22
-- Product: MacPad
+- Product: VibeNote
 - Platform: macOS 13+
 - Stack: Swift, AppKit, Swift Package Manager
 - Current phase: Phase 1 - Native app shell and document workflow
@@ -22,9 +22,9 @@
 - Added reload-from-disk and external file-change detection with Reload/Keep Local confirmation.
 - Added a development `.app` packaging script.
 - Added an explicit AppKit `NSApplication.run()` entry point so the packaged app creates its window correctly.
-- Added a complete Notepad++-to-MacPad parity baseline and menu tracker.
-- Replaced the oversized backend/frontend split with a focused `macpad-editor` skill.
-- Added a separate `macpad-liquid-glass` skill for platform-specific materials and fallbacks.
+- Added a complete Notepad++-to-VibeNote parity baseline and menu tracker.
+- Replaced the oversized backend/frontend split with a focused `vibenote-editor` skill.
+- Added a separate `vibenote-liquid-glass` skill for platform-specific materials and fallbacks.
 - Added a persistent master prompt and resume prompt for parity-focused vibe coding.
 - Added zoom controls.
 - Added original app icon generation, vector logo and brand direction.
@@ -35,9 +35,9 @@
 - Applied native header material to status chrome while keeping the editor content opaque.
 - Added unit coverage for BOM/EOL persistence and SearchEngine behavior.
 - Added common-language registry, persisted language selection and native TextKit syntax highlighting for comments, strings, numbers and keywords.
-- Added one-application-instance enforcement for the packaged MacPad app.
+- Added one-application-instance enforcement for the packaged VibeNote app.
 - Added a visible AppKit document tab strip with selected/modified/pinned state, close buttons, scrolling and close-group context actions.
-- Added same-window routing/deduplication for files opened while MacPad is already running and placed the custom tab chrome above the native `NSTabViewController` editor host.
+- Added same-window routing/deduplication for files opened while VibeNote is already running and placed the custom tab chrome above the native `NSTabViewController` editor host.
 - Corrected the window content layout so the visible tab row is below the unified toolbar; verified both one-tab and multi-tab windows visually.
 - Added Notepad++-style Smart Highlighting: selecting a token highlights every matching occurrence through temporary AppKit layout attributes without changing document text or syntax attributes.
 - Added a View > Smart Highlighting toggle and stronger dynamic Light/Dark editor, syntax and occurrence-highlight colors.
@@ -49,7 +49,7 @@
 - Fixed invisible editor text by replacing the oversized `NSRulerView` overlay with a constrained 46pt line-number gutter beside the native scroll view; verified visible typing with Dracula and line numbers enabled.
 - Added native Finder drag/drop across the editor and window chrome; one or many extensionless/text/source files route through the existing deduplicated same-window tab opening flow, while folders are rejected.
 - Corrected Finder drop decoding to recognize both modern file URLs and legacy filename lists; file payloads can no longer fall through to `NSTextView` and insert their filesystem path into document content.
-- Added VS Code Explorer compatibility for external plain-path drag payloads and a lower-level `NSTextView.readSelection` guard; runtime inspection showed the user's active MacPad process started before the corrected binary was built.
+- Added VS Code Explorer compatibility for external plain-path drag payloads and a lower-level `NSTextView.readSelection` guard; runtime inspection showed the user's active VibeNote process started before the corrected binary was built.
 - Added native middle-click close behavior to tab title and close-button controls, routed through the existing unsaved-change confirmation flow.
 - Corrected the middle-click implementation to use AppKit `otherMouseDown` (the actual event for mouse button 2) and included the tab cell's padding area, matching Chrome-style close behavior across the whole tab.
 - Changed main-window close and app termination to synchronously checkpoint the automatic recovery session and exit without a save dialog; startup now restores the exact persisted content for every tab, including saved-file tabs and unsaved notes.
@@ -82,8 +82,8 @@ Continue the next parity slice: complete selection-safe editor transforms/search
 - `swift build`: PASS.
 - `swift build` after FILE-009/FILE-010: PASS.
 - `swift build -c release`: PASS.
-- `./scripts/build-app.sh`: PASS; generated unsigned development `dist/MacPad.app` with `MacPad.icns`.
-- Launch smoke check: PASS; repeated packaged `open` calls reported one MacPad process, and multiple file-open events produced multiple editor/tab records in that process.
+- `./scripts/build-app.sh`: PASS; generated unsigned development `dist/VibeNote.app` with `VibeNote.icns`.
+- Launch smoke check: PASS; repeated packaged `open` calls reported one VibeNote process, and multiple file-open events produced multiple editor/tab records in that process.
 - Tab UI acceptance: PASS for one visible `Untitled` tab and multiple visible tabs (`Untitled`, `README.md`, `AGENTS.md`) in one window.
 - Smart Highlighting implementation: `OccurrenceHighlighter` unit coverage added; manual Light/Dark packaged-app acceptance remains to be run.
 - `swift test`: BLOCKED because the active developer directory is Command Line Tools and XCTest is unavailable; full Xcode is required.
@@ -97,7 +97,7 @@ Continue the next parity slice: complete selection-safe editor transforms/search
 - Current `swift build`: PASS after FILE-007/FILE-014 close-without-prompt recovery changes; `swift test` remains blocked by missing XCTest.
 - Current `swift build`: PASS after VIEW-001/VIEW-013 compact toolbar and long-tab-title presentation changes.
 - Current `swift build`: PASS after right-aligned icon-only toolbar, fast hover labels and Search/Find & Replace popup toolbar actions.
-- `./scripts/build-app.sh`: PASS; generated unsigned development [MacPad.app](../../dist/MacPad.app) with the updated toolbar and popup actions. `plutil -lint`: PASS.
+- `./scripts/build-app.sh`: PASS; generated unsigned development [VibeNote.app](../../dist/VibeNote.app) with the updated toolbar and popup actions. `plutil -lint`: PASS.
 - Current `swift build`: PASS after high-contrast palette, syntax emphasis and sRGB color conversion fixes.
 - Current `swift build`: PASS after explicit Light/Dark themes and matching editor/gutter backgrounds.
 - `swift build -c release`: PASS; `./scripts/build-app.sh`: PASS after explicit Light/Dark theme slice.

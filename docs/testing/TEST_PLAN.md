@@ -13,7 +13,7 @@
 - Save As to a new path.
 - Open several files and switch tabs.
 - Middle-click the tab title, close-button area and padding area; verify the clicked tab closes like Chrome and a modified tab shows Save/Cancel/Discard before closing.
-- Type content into multiple tabs, including an unsaved Untitled note, click the red window close button and verify there is no save dialog, the app exits, and reopening MacPad restores the same tabs, content, modified state and selected tab.
+- Type content into multiple tabs, including an unsaved Untitled note, click the red window close button and verify there is no save dialog, the app exits, and reopening VibeNote restores the same tabs, content, modified state and selected tab.
 - Drag one extensionless text file and then several mixed text/source files from Finder onto both the editor and tab row; verify each opens once in the same window and folders are ignored.
 - Search for text and select the next match.
 - Zoom editor in/out/reset.

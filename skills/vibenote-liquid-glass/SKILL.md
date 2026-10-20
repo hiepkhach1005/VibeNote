@@ -1,11 +1,11 @@
 ---
-name: macpad-liquid-glass
-description: Design, implement and review Liquid Glass for MacPad's native macOS chrome, including toolbars, tabs, sidebars, inspectors, transient search surfaces, accessibility fallbacks and SDK availability. Use when a task changes materials, translucency, glass effects, window chrome or visual hierarchy; do not use for ordinary editor/domain work.
+name: vibenote-liquid-glass
+description: Design, implement and review Liquid Glass for VibeNote's native macOS chrome, including toolbars, tabs, sidebars, inspectors, transient search surfaces, accessibility fallbacks and SDK availability. Use when a task changes materials, translucency, glass effects, window chrome or visual hierarchy; do not use for ordinary editor/domain work.
 ---
 
-# MacPad Liquid Glass
+# VibeNote Liquid Glass
 
-Apply Liquid Glass deliberately to MacPad's functional chrome while keeping the text/code content layer stable and readable. This is a focused visual/platform skill, not the general editor skill.
+Apply Liquid Glass deliberately to VibeNote's functional chrome while keeping the text/code content layer stable and readable. This is a focused visual/platform skill, not the general editor skill.
 
 ## Mandatory rules
 
@@ -38,4 +38,4 @@ Apply Liquid Glass deliberately to MacPad's functional chrome while keeping the 
 
 ## References
 
-Read [references/apple-guidance.md](references/apple-guidance.md) for the concise Apple rules used by this project. Read [references/macpad-surfaces.md](references/macpad-surfaces.md) to choose glass versus standard material for each editor surface.
+Read [references/apple-guidance.md](references/apple-guidance.md) for the concise Apple rules used by this project. Read [references/vibenote-surfaces.md](references/vibenote-surfaces.md) to choose glass versus standard material for each editor surface.

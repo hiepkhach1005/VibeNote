@@ -47,7 +47,7 @@ final class SessionStore {
         let applicationSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
             ?? fileManager.temporaryDirectory
         return applicationSupport
-            .appendingPathComponent("MacPad", isDirectory: true)
+            .appendingPathComponent("VibeNote", isDirectory: true)
             .appendingPathComponent("session.json")
     }
 

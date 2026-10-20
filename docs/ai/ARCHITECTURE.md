@@ -3,7 +3,7 @@
 ## Current structure
 
 ```text
-Sources/MacPad/
+Sources/VibeNote/
 ├── AppDelegate.swift
 ├── AppCommands.swift
 ├── DocumentModel.swift

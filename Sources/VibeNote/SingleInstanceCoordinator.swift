@@ -1,9 +1,9 @@
 import AppKit
 
 enum SingleInstanceCoordinator {
-    private static let bundleIdentifier = "com.macpad.editor"
+    private static let bundleIdentifier = "com.vibenote.VibeNote"
 
-    /// Returns true when another MacPad process owns the application identity.
+    /// Returns true when another VibeNote process owns the application identity.
     /// LaunchServices normally enforces this through the bundle declaration; the
     /// explicit check also covers development launches of the packaged binary.
     static func activateExistingInstance() -> Bool {

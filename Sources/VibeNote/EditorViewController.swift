@@ -1,6 +1,6 @@
 import AppKit
 
-private final class MacPadAppearanceView: FileDropView {
+private final class VibeNoteAppearanceView: FileDropView {
     var onAppearanceChange: (() -> Void)?
 
     override func viewDidChangeEffectiveAppearance() {
@@ -48,7 +48,7 @@ final class EditorViewController: NSViewController, NSTextViewDelegate {
     }
 
     override func loadView() {
-        let editorView = MacPadAppearanceView()
+        let editorView = VibeNoteAppearanceView()
         editorView.onAppearanceChange = { [weak self] in
             self?.applyTextSettings()
         }

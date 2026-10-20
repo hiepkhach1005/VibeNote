@@ -1,17 +1,17 @@
 ---
-name: macpad-editor
-description: Build and maintain the complete native MacPad editor and Notepad++ built-in parity workflow, including document core, AppKit UI, menus, tabs, editing, search, encoding, syntax, workspaces, sessions, macros, commands, accessibility and tracking. Use for any MacPad feature or refactor unless the task is specifically about Liquid Glass material implementation.
+name: vibenote-editor
+description: Build and maintain the complete native VibeNote editor and Notepad++ built-in parity workflow, including document core, AppKit UI, menus, tabs, editing, search, encoding, syntax, workspaces, sessions, macros, commands, accessibility and tracking. Use for any VibeNote feature or refactor unless the task is specifically about Liquid Glass material implementation.
 ---
 
-# MacPad Editor
+# VibeNote Editor
 
-Use this as the single project skill for normal MacPad work. It covers the product surface and its domain/UI boundary without pretending the project has a web-style frontend/backend split.
+Use this as the single project skill for normal VibeNote work. It covers the product surface and its domain/UI boundary without pretending the project has a web-style frontend/backend split.
 
 ## Reference architecture
 
 Model the project after the useful responsibility boundaries visible in Notepad++:
 
-- Application/document/UI behavior → `PowerEditor`-like MacPad application layer.
+- Application/document/UI behavior → `PowerEditor`-like VibeNote application layer.
 - Text editor core → Scintilla-like editor abstraction, implemented with AppKit/TextKit 2 or an explicitly chosen editor engine.
 - Syntax/language services → Lexilla-like language registry and lexer boundary.
 - Regex/search → isolated search engine.
@@ -58,7 +58,7 @@ Keep core logic independent from views. UI surfaces consume commands/services in
 - Make bulk replacements transactional and undoable where feasible.
 - Add tests for success, invalid input, cancellation, persistence and recovery.
 - Use system colors, native controls and keyboard conventions.
-- Use the separate `$macpad-liquid-glass` skill whenever implementing or reviewing Liquid Glass.
+- Use the separate `$vibenote-liquid-glass` skill whenever implementing or reviewing Liquid Glass.
 
 ## Tracking contract
 
@@ -71,7 +71,7 @@ After every feature slice update:
 - `docs/ai/PROJECT_STATE.md`
 - `docs/ai/BACKLOG.md` and `docs/ai/KNOWN_ISSUES.md` when needed
 
-Use only these statuses: `NPP_ONLY`, `MACPAD_ONLY`, `PARITY_IN_PROGRESS`, `PARITY_DONE`, `DEFERRED`, `NOT_APPLICABLE`, `BLOCKED`.
+Use only these statuses: `NPP_ONLY`, `VIBENOTE_ONLY`, `PARITY_IN_PROGRESS`, `PARITY_DONE`, `DEFERRED`, `NOT_APPLICABLE`, `BLOCKED`.
 
 ## References
 

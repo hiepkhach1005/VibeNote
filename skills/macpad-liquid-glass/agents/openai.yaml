@@ -1,4 +1,0 @@
-interface:
-  display_name: "MacPad Liquid Glass"
-  short_description: "Apply Liquid Glass to native editor chrome"
-  default_prompt: "Use $macpad-liquid-glass to design or implement native Liquid Glass chrome with accessibility fallbacks."

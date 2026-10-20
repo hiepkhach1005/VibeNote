@@ -1,4 +1,4 @@
-feature_id,category,notepad_plus_plus_function,notepad_plus_plus_evidence,macpad_function,macpad_status,implementation_area,tests,remaining_gap
+feature_id,category,notepad_plus_plus_function,notepad_plus_plus_evidence,vibenote_function,vibenote_status,implementation_area,tests,remaining_gap
 FILE-001,File,New document,Manual File menu,New untitled tab,PARITY_DONE,MainWindowController,Manual,Templates pending
 FILE-002,File,Open files,Manual File menu,Native Open panel,PARITY_DONE,DocumentStore,Manual,Recent files pending
 FILE-003,File,Save,Manual File menu,Atomic native save with encoding/BOM/EOL model,PARITY_DONE,DocumentStore,Manual + unit,Loss warning and file type policy pending
@@ -24,7 +24,7 @@ SEARCH-004,Search,Regex modes,Manual Searching,Normal/extended/regex engine with
 SEARCH-005,Search,Find in Files,Manual Searching,None,NPP_ONLY,FileSearchService,Planned,Directory filters
 SEARCH-008,Search,Count and Smart Highlighting,Manual Searching,Find panel count plus selected-token occurrence highlighting with a non-destructive AppKit overlay,PARITY_IN_PROGRESS,SearchEngine/OccurrenceHighlighter/EditorViewController,Unit + Manual,Persistent Style All Occurrences and Search Results integration
 VIEW-001,View,Tab bar and tab context menu,Manual User Interface,"One-window AppKit tab strip is visible for one or many documents, with selected/modified/pinned state, close buttons, middle-click close, capped long titles and full-name hover tooltips",PARITY_IN_PROGRESS,TabStripView/MainWindowController,Manual,"Drag reorder, tab colors and lock state"
-VIEW-002,View,Document switcher/MRU,Manual User Interface,"Next/Previous Tab commands plus single-instance activation into the existing MacPad window",PARITY_IN_PROGRESS,MainWindowController/AppDelegate/SingleInstanceCoordinator,Manual,Dedicated keyboard MRU switcher
+VIEW-002,View,Document switcher/MRU,Manual User Interface,"Next/Previous Tab commands plus single-instance activation into the existing VibeNote window",PARITY_IN_PROGRESS,MainWindowController/AppDelegate/SingleInstanceCoordinator,Manual,Dedicated keyboard MRU switcher
 VIEW-003,View,Dual view,Manual Views,None,NPP_ONLY,SplitEditor,Planned,Synchronized scrolling
 VIEW-005,View,Folder as Workspace,Manual Workspaces,None,NPP_ONLY,WorkspaceService,Planned,Folder tree
 VIEW-007,View,Document Map,Manual Views,None,NPP_ONLY,DocumentMap,Planned,Map rendering
@@ -38,7 +38,7 @@ LANGUAGE-002,Language,Syntax highlighting,Manual Syntax Highlighting,Native high
 LANGUAGE-005,Language,User Defined Language,Manual UDL,None,NPP_ONLY,LanguageRegistry,Planned,Custom rules
 SETTINGS-001,Settings,Preferences,Manual Preferences,Native Text Settings window persists font family size editor colors syntax colors and applies them to every tab,PARITY_IN_PROGRESS,TextSettings/TextSettingsWindowController/MainWindowController,Unit + Manual,Complete Preferences sections import/export accessibility audit and per-language scopes
 SETTINGS-002,Settings,Shortcut Mapper,Manual Preferences,None,NPP_ONLY,CommandRegistry,Planned,Customization
-SETTINGS-003,Settings,Style Configurator/themes,Manual Preferences,Text Settings includes persisted MacPad System Light Dark Dracula Nord Solarized One Dark and Custom palettes with clean Light/Dark editor surfaces and a non-overlapping matching gutter,PARITY_IN_PROGRESS,TextSettings/TextSettingsWindowController/LineNumberRulerView,Unit + Manual,Full per-language Style Configurator and theme import/export
+SETTINGS-003,Settings,Style Configurator/themes,Manual Preferences,Text Settings includes persisted VibeNote System Light Dark Dracula Nord Solarized One Dark and Custom palettes with clean Light/Dark editor surfaces and a non-overlapping matching gutter,PARITY_IN_PROGRESS,TextSettings/TextSettingsWindowController/LineNumberRulerView,Unit + Manual,Full per-language Style Configurator and theme import/export
 MACRO-001,Macro,Macro recording,Manual Macros,None,NPP_ONLY,MacroService,Planned,Action recording
 RUN-001,Run,External commands,Manual Run,None,NPP_ONLY,ExternalCommandService,Planned,Confirmation and output
 TOOLS-001,Tools,File hashes,Manual Tools,None,NPP_ONLY,HashService,Planned,SHA-256 output

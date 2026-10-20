@@ -9,7 +9,7 @@
 - Added full built-in parity tracking against the official Notepad++ repository/manual.
 - Added persistent master/resume prompts and project-local backend/frontend skills.
 - Added Liquid Glass placement rules and familiar Notepad++ layout guidance.
-- Consolidated backend/frontend skills into `macpad-editor` and added dedicated `macpad-liquid-glass` skill.
+- Consolidated backend/frontend skills into `vibenote-editor` and added dedicated `vibenote-liquid-glass` skill.
 - Added reload-from-disk and external file-change detection with safe conflict handling.
 
 ## Unreleased - 2026-08-18
@@ -22,7 +22,7 @@
 
 ## Unreleased - 2026-08-19
 
-- Enforced a single MacPad application instance for the packaged app.
+- Enforced a single VibeNote application instance for the packaged app.
 - Added same-window multi-document tabs with selected/modified/pinned state, close buttons, horizontal scrolling and tab context actions.
 - Added Next/Previous Tab commands and placed the custom tab row above the native editor content.
 - Corrected unified-toolbar window layout so the tab row is visible even when only one document is open; visually verified one-tab and three-tab windows.
@@ -31,7 +31,7 @@
 
 - Added Notepad++-style Smart Highlighting for every occurrence of the selected token, with a View toggle and non-destructive AppKit overlay.
 - Added stronger dynamic Light/Dark editor and syntax colors plus explicit native selection contrast.
-- Added native Text Settings with persisted font family, font size, editor/syntax color wells and MacPad System, Dracula, Nord, Solarized, One Dark and Custom themes; changes apply to all open tabs.
+- Added native Text Settings with persisted font family, font size, editor/syntax color wells and VibeNote System, Dracula, Nord, Solarized, One Dark and Custom themes; changes apply to all open tabs.
 - Added explicit Light and Dark themes, with a clean white Light editor/gutter and a stable dark editor surface.
 - Increased default text contrast, made Markdown headings and language keywords visually prominent, brightened Smart Highlighting, fixed sRGB HEX color conversion and migrated existing low-contrast System settings.
 - Added automatic contrast repair so white-on-white foreground and syntax colors are replaced with readable colors for the active editor background; repaired palettes are persisted and synchronized back to Text Settings.
@@ -42,7 +42,7 @@
 - Rebuilt line numbers as a constrained, scroll-synchronized 46pt gutter beside the native text editor.
 - Normalized native text-view/container setup and explicit theme typing attributes.
 - Fixed intermittent release launches with no window by retaining the AppKit application delegate for the run-loop lifetime.
-- Added native Finder drag/drop over the editor, tabs and window chrome; dropped files open as deduplicated tabs in the existing MacPad window regardless of filename extension.
+- Added native Finder drag/drop over the editor, tabs and window chrome; dropped files open as deduplicated tabs in the existing VibeNote window regardless of filename extension.
 - Fixed dropped Finder files being inserted as path strings by recognizing both modern file URLs and legacy filename pasteboard payloads before `NSTextView` fallback handling.
 - Added middle-click close to document tabs, including the tab title and close-button area, with existing unsaved-change protection.
 - Corrected middle-click tab closing to use AppKit's `otherMouseDown` event and cover the entire tab cell, including padding.

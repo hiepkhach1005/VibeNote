@@ -29,5 +29,5 @@
 - Date: 2026-08-17
 - Status: Accepted
 - Context: The reference repository is organized around application/editor/lexer/search responsibilities, not a web frontend/backend split. Two small project skills duplicated workflow and tracker guidance.
-- Decision: Remove `macpad-backend` and `macpad-frontend`. Use `macpad-editor` for normal product work and `macpad-liquid-glass` for the specialized visual platform rules.
+- Decision: Remove `vibenote-backend` and `vibenote-frontend`. Use `vibenote-editor` for normal product work and `vibenote-liquid-glass` for the specialized visual platform rules.
 - Consequence: Fewer project skills, clearer triggering, and a dedicated place for Liquid Glass availability/accessibility guidance.

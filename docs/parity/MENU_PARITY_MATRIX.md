@@ -2,7 +2,7 @@
 
 The menu order remains familiar to Notepad++ users, while command shortcuts follow macOS conventions.
 
-| Menu | Notepad++ role | MacPad target | Status |
+| Menu | Notepad++ role | VibeNote target | Status |
 |---|---|---|---|
 | File | New/open/save/close/reload/print/session-related file operations | Native macOS document commands and sheets | PARITY_IN_PROGRESS |
 | Edit | Text editing, line operations, case/indent transforms | Native NSTextView commands plus line/case transforms | PARITY_IN_PROGRESS |
@@ -16,5 +16,5 @@ The menu order remains familiar to Notepad++ users, while command shortcuts foll
 | Run | External command execution | Explicitly confirmed macOS shell runner | NPP_ONLY |
 | Window | Open documents, tab ordering and window actions | Native single-window document tabs, Next/Previous Tab commands and app activation | PARITY_IN_PROGRESS |
 | Help | Help, about, updates and diagnostics | Native Help/About; update strategy later | PARITY_IN_PROGRESS |
-| MacPad application menu | macOS-required application commands | About, Preferences, Hide, Quit | PARITY_DONE |
+| VibeNote application menu | macOS-required application commands | About, Preferences, Hide, Quit | PARITY_DONE |
 | Plugins | Plugin manager and plugin commands | Deferred by current scope | DEFERRED |

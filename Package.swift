@@ -2,22 +2,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "MacPad",
+    name: "VibeNote",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "MacPad", targets: ["MacPad"])
+        .executable(name: "VibeNote", targets: ["VibeNote"])
     ],
     targets: [
         .executableTarget(
-            name: "MacPad",
-            path: "Sources/MacPad"
+            name: "VibeNote",
+            path: "Sources/VibeNote"
         ),
         .testTarget(
-            name: "MacPadTests",
-            dependencies: ["MacPad"],
-            path: "Tests/MacPadTests"
+            name: "VibeNoteTests",
+            dependencies: ["VibeNote"],
+            path: "Tests/VibeNoteTests"
         )
     ]
 )

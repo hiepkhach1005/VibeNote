@@ -50,48 +50,48 @@ struct TextPalette: Codable, Equatable {
     var heading: String
 
     func styleColors() -> TextStyleColors {
-        let backgroundColor = NSColor(macPadHex: background)
+        let backgroundColor = NSColor(vibeNoteHex: background)
         let fallbackForeground = readableFallback(for: backgroundColor)
         return TextStyleColors(
-            foreground: readableTextColor(NSColor(macPadHex: foreground), on: backgroundColor, fallback: fallbackForeground),
+            foreground: readableTextColor(NSColor(vibeNoteHex: foreground), on: backgroundColor, fallback: fallbackForeground),
             background: backgroundColor,
-            selection: NSColor(macPadHex: selection),
-            occurrence: NSColor(macPadHex: occurrence).withAlphaComponent(0.58),
-            comment: readableTextColor(NSColor(macPadHex: comment), on: backgroundColor, fallback: fallbackForeground),
-            string: readableTextColor(NSColor(macPadHex: string), on: backgroundColor, fallback: fallbackForeground),
-            number: readableTextColor(NSColor(macPadHex: number), on: backgroundColor, fallback: fallbackForeground),
-            keyword: readableTextColor(NSColor(macPadHex: keyword), on: backgroundColor, fallback: fallbackForeground),
-            heading: readableTextColor(NSColor(macPadHex: heading), on: backgroundColor, fallback: fallbackForeground)
+            selection: NSColor(vibeNoteHex: selection),
+            occurrence: NSColor(vibeNoteHex: occurrence).withAlphaComponent(0.58),
+            comment: readableTextColor(NSColor(vibeNoteHex: comment), on: backgroundColor, fallback: fallbackForeground),
+            string: readableTextColor(NSColor(vibeNoteHex: string), on: backgroundColor, fallback: fallbackForeground),
+            number: readableTextColor(NSColor(vibeNoteHex: number), on: backgroundColor, fallback: fallbackForeground),
+            keyword: readableTextColor(NSColor(vibeNoteHex: keyword), on: backgroundColor, fallback: fallbackForeground),
+            heading: readableTextColor(NSColor(vibeNoteHex: heading), on: backgroundColor, fallback: fallbackForeground)
         )
     }
 
     mutating func ensureReadableContrast() {
-        let backgroundColor = NSColor(macPadHex: background)
+        let backgroundColor = NSColor(vibeNoteHex: background)
         let fallbackForeground = readableFallback(for: backgroundColor)
-        foreground = readableTextColor(NSColor(macPadHex: foreground), on: backgroundColor, fallback: fallbackForeground).macPadHex
-        comment = readableTextColor(NSColor(macPadHex: comment), on: backgroundColor, fallback: fallbackForeground).macPadHex
-        string = readableTextColor(NSColor(macPadHex: string), on: backgroundColor, fallback: fallbackForeground).macPadHex
-        number = readableTextColor(NSColor(macPadHex: number), on: backgroundColor, fallback: fallbackForeground).macPadHex
-        keyword = readableTextColor(NSColor(macPadHex: keyword), on: backgroundColor, fallback: fallbackForeground).macPadHex
-        heading = readableTextColor(NSColor(macPadHex: heading), on: backgroundColor, fallback: fallbackForeground).macPadHex
+        foreground = readableTextColor(NSColor(vibeNoteHex: foreground), on: backgroundColor, fallback: fallbackForeground).vibeNoteHex
+        comment = readableTextColor(NSColor(vibeNoteHex: comment), on: backgroundColor, fallback: fallbackForeground).vibeNoteHex
+        string = readableTextColor(NSColor(vibeNoteHex: string), on: backgroundColor, fallback: fallbackForeground).vibeNoteHex
+        number = readableTextColor(NSColor(vibeNoteHex: number), on: backgroundColor, fallback: fallbackForeground).vibeNoteHex
+        keyword = readableTextColor(NSColor(vibeNoteHex: keyword), on: backgroundColor, fallback: fallbackForeground).vibeNoteHex
+        heading = readableTextColor(NSColor(vibeNoteHex: heading), on: backgroundColor, fallback: fallbackForeground).vibeNoteHex
     }
 
     func color(for role: TextColorRole) -> NSColor {
         switch role {
-        case .foreground: return NSColor(macPadHex: foreground)
-        case .background: return NSColor(macPadHex: background)
-        case .selection: return NSColor(macPadHex: selection)
-        case .occurrence: return NSColor(macPadHex: occurrence)
-        case .comment: return NSColor(macPadHex: comment)
-        case .string: return NSColor(macPadHex: string)
-        case .number: return NSColor(macPadHex: number)
-        case .keyword: return NSColor(macPadHex: keyword)
-        case .heading: return NSColor(macPadHex: heading)
+        case .foreground: return NSColor(vibeNoteHex: foreground)
+        case .background: return NSColor(vibeNoteHex: background)
+        case .selection: return NSColor(vibeNoteHex: selection)
+        case .occurrence: return NSColor(vibeNoteHex: occurrence)
+        case .comment: return NSColor(vibeNoteHex: comment)
+        case .string: return NSColor(vibeNoteHex: string)
+        case .number: return NSColor(vibeNoteHex: number)
+        case .keyword: return NSColor(vibeNoteHex: keyword)
+        case .heading: return NSColor(vibeNoteHex: heading)
         }
     }
 
     mutating func setColor(_ color: NSColor, for role: TextColorRole) {
-        let hex = color.macPadHex
+        let hex = color.vibeNoteHex
         switch role {
         case .foreground: foreground = hex
         case .background: background = hex
@@ -131,7 +131,7 @@ struct TextPalette: Codable, Equatable {
     )
 
     // Explicit Light/Dark presets intentionally use the same clean editor
-    // surfaces in both appearances. MacPad System remains adaptive.
+    // surfaces in both appearances. VibeNote System remains adaptive.
     static let light = TextPalette(
         foreground: "#111827",
         background: "#FFFFFF",
@@ -222,8 +222,8 @@ private func readableTextColor(_ color: NSColor, on background: NSColor, fallbac
 }
 
 private func readableFallback(for background: NSColor) -> NSColor {
-    let dark = NSColor(macPadHex: "#111827")
-    let light = NSColor(macPadHex: "#F8FAFC")
+    let dark = NSColor(vibeNoteHex: "#111827")
+    let light = NSColor(vibeNoteHex: "#F8FAFC")
     return dark.contrastRatio(with: background) >= light.contrastRatio(with: background) ? dark : light
 }
 
@@ -239,7 +239,7 @@ enum TextThemeID: String, CaseIterable, Codable {
 
     var displayName: String {
         switch self {
-        case .system: return "MacPad System"
+        case .system: return "VibeNote System"
         case .light: return "Light"
         case .dark: return "Dark"
         case .dracula: return "Dracula"
@@ -352,7 +352,7 @@ struct TextSettings: Codable, Equatable {
 
 final class TextSettingsStore {
     private let defaults = UserDefaults.standard
-    private let key = "MacPad.TextSettings.v1"
+    private let key = "VibeNote.TextSettings.v1"
 
     func load() -> TextSettings {
         guard let data = defaults.data(forKey: key),
@@ -398,8 +398,8 @@ final class TextSettingsStore {
 }
 
 extension NSColor {
-    convenience init(macPadHex: String, alpha: CGFloat = 1) {
-        let value = macPadHex.trimmingCharacters(in: CharacterSet(charactersIn: "#"))
+    convenience init(vibeNoteHex: String, alpha: CGFloat = 1) {
+        let value = vibeNoteHex.trimmingCharacters(in: CharacterSet(charactersIn: "#"))
         let scanner = Scanner(string: value)
         var rgb: UInt64 = 0
         guard value.count == 6, scanner.scanHexInt64(&rgb) else {
@@ -414,7 +414,7 @@ extension NSColor {
         )
     }
 
-    var macPadHex: String {
+    var vibeNoteHex: String {
         guard let rgb = usingColorSpace(.sRGB) ?? usingColorSpace(.deviceRGB) else { return "#808080" }
         let red = Int((rgb.redComponent * 255).rounded())
         let green = Int((rgb.greenComponent * 255).rounded())

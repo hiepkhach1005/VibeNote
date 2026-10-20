@@ -5,15 +5,15 @@ enum AppCommands {
         let mainMenu = NSMenu()
 
         let appMenuItem = NSMenuItem()
-        let appMenu = NSMenu(title: "MacPad")
-        let aboutItem = appMenu.addItem(withTitle: "About MacPad", action: #selector(MainWindowController.showAbout), keyEquivalent: "")
+        let appMenu = NSMenu(title: "VibeNote")
+        let aboutItem = appMenu.addItem(withTitle: "About VibeNote", action: #selector(MainWindowController.showAbout), keyEquivalent: "")
         aboutItem.target = target
         appMenu.addItem(.separator())
         let preferencesItem = appMenu.addItem(withTitle: "Preferences…", action: #selector(MainWindowController.showPreferences), keyEquivalent: ",")
         preferencesItem.target = target
         appMenu.addItem(.separator())
-        appMenu.addItem(withTitle: "Hide MacPad", action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
-        appMenu.addItem(withTitle: "Quit MacPad", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appMenu.addItem(withTitle: "Hide VibeNote", action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
+        appMenu.addItem(withTitle: "Quit VibeNote", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appMenuItem.submenu = appMenu
         mainMenu.addItem(appMenuItem)
 
@@ -121,7 +121,7 @@ enum AppCommands {
 
         let helpItem = NSMenuItem()
         let helpMenu = NSMenu(title: "Help")
-        let helpAction = helpMenu.addItem(withTitle: "MacPad Help", action: #selector(MainWindowController.showHelp), keyEquivalent: "?")
+        let helpAction = helpMenu.addItem(withTitle: "VibeNote Help", action: #selector(MainWindowController.showHelp), keyEquivalent: "?")
         helpAction.target = target
         helpItem.submenu = helpMenu
         mainMenu.addItem(helpItem)

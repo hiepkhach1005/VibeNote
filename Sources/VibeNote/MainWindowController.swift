@@ -44,7 +44,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
         window?.isReleasedWhenClosed = false
         window?.isRestorable = false
         window?.restorationClass = nil
-        window?.title = "MacPad"
+        window?.title = "VibeNote"
         window?.center()
         window?.minSize = NSSize(width: 600, height: 400)
         configureWindow()
@@ -68,7 +68,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
     private func configureWindow() {
         guard let window else { return }
 
-        let toolbar = NSToolbar(identifier: "MacPadToolbar")
+        let toolbar = NSToolbar(identifier: "VibeNoteToolbar")
         toolbar.delegate = self
         toolbar.allowsUserCustomization = true
         // Keep the toolbar compact like a native macOS editor. The action
@@ -208,7 +208,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
             let lineEnding = DocumentLineEnding(rawValue: persisted.lineEnding) ?? .lf
             let language = LanguageID(rawValue: persisted.language) ?? LanguageRegistry.detect(for: url)
             // The recovery session is authoritative at launch. This preserves
-            // the exact text visible when MacPad closed, including unsaved edits
+            // the exact text visible when VibeNote closed, including unsaved edits
             // and files whose on-disk contents changed while the app was away.
             // The regular external-change monitor can still notify the user
             // after the restored tab is active.
@@ -390,7 +390,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
 
     private func presentExternalChangePrompt(for editor: EditorViewController, snapshot: FileSnapshot?) {
         let alert = NSAlert()
-        alert.messageText = "File changed outside MacPad"
+        alert.messageText = "File changed outside VibeNote"
         alert.informativeText = "\(editor.document.displayName) was changed by another application."
         alert.alertStyle = .warning
         alert.addButton(withTitle: "Reload")
@@ -718,7 +718,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
 
     @objc func showAbout() {
         let alert = NSAlert()
-        alert.messageText = "MacPad"
+        alert.messageText = "VibeNote"
         alert.informativeText = "Native macOS text editor\nEarly development build"
         alert.runModal()
     }
@@ -755,7 +755,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
 
     @objc func showHelp() {
         let alert = NSAlert()
-        alert.messageText = "MacPad Help"
+        alert.messageText = "VibeNote Help"
         alert.informativeText = "Use File > Open to edit a file, or create a new tab with Command-N."
         alert.runModal()
     }
@@ -767,7 +767,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
     private func updateTab(for editor: EditorViewController) {
         guard let index = editors.firstIndex(of: editor), index < tabViewController.tabViewItems.count else { return }
         tabViewController.tabViewItems[index].label = editor.document.title
-        window?.title = "\(editor.document.title) — MacPad"
+        window?.title = "\(editor.document.title) — VibeNote"
         refreshTabStrip()
     }
 
@@ -818,7 +818,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate, NSToolba
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         // Closing the main window is a session checkpoint, not a destructive
         // document close. Preserve every tab, including unsaved Untitled notes,
-        // then terminate so reopening MacPad starts from the same session.
+        // then terminate so reopening VibeNote starts from the same session.
         persistSession()
         guard !isTerminatingFromWindowClose else { return true }
         isTerminatingFromWindowClose = true

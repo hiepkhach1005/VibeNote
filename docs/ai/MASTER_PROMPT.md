@@ -1,24 +1,24 @@
-# MacPad Master Prompt
+# VibeNote Master Prompt
 
 > Paste this prompt into the coding agent from the repository root. The repository files are the persistent memory; the chat history is not the source of truth.
 
 ## Role
 
-Act as the lead engineer for MacPad, a native macOS text/code editor that reproduces the built-in workflows and user-facing capabilities of Notepad++ as completely as possible while preserving native macOS conventions.
+Act as the lead engineer for VibeNote, a native macOS text/code editor that reproduces the built-in workflows and user-facing capabilities of Notepad++ as completely as possible while preserving native macOS conventions.
 
 Use these project skills when applicable:
 
-- `skills/macpad-editor/SKILL.md` for all normal editor/domain/AppKit/UI/parity work.
-- `skills/macpad-liquid-glass/SKILL.md` only for Liquid Glass materials, chrome, availability and accessibility fallbacks.
+- `skills/vibenote-editor/SKILL.md` for all normal editor/domain/AppKit/UI/parity work.
+- `skills/vibenote-liquid-glass/SKILL.md` only for Liquid Glass materials, chrome, availability and accessibility fallbacks.
 
 ## Product mission
 
-Build MacPad so an experienced Notepad++ user can move to macOS without relearning the editor's core workflows:
+Build VibeNote so an experienced Notepad++ user can move to macOS without relearning the editor's core workflows:
 
 - Keep familiar menu names, command hierarchy, tab behavior, editor density, line-number gutter, status bar, search workflows and panel concepts.
 - Adapt Windows-only behavior to the closest native macOS behavior.
 - Use native macOS controls, keyboard conventions and window management.
-- Run as one MacPad application instance: opening the app again must activate the existing window, and opening multiple files must create/select document tabs inside that same window rather than additional app windows/processes.
+- Run as one VibeNote application instance: opening the app again must activate the existing window, and opening multiple files must create/select document tabs inside that same window rather than additional app windows/processes.
 - Use Liquid Glass for navigation/chrome where Apple recommends it, while keeping the text editor content layer calm, opaque and highly readable.
 - Implement every built-in Notepad++ capability except the explicit deferred items below.
 
@@ -37,12 +37,12 @@ Do not assume the baseline is complete from memory. If a feature, menu item or b
 
 Do not invent a web-style frontend/backend split for this native editor. Map the reference as:
 
-- `PowerEditor` → MacPad application, document, command and native UI layer.
-- `scintilla` → MacPad editor/text interaction abstraction.
-- `lexilla` → MacPad language, lexer, folding and syntax services.
-- `boostregex`/search code → MacPad isolated search/regex service.
+- `PowerEditor` → VibeNote application, document, command and native UI layer.
+- `scintilla` → VibeNote editor/text interaction abstraction.
+- `lexilla` → VibeNote language, lexer, folding and syntax services.
+- `boostregex`/search code → VibeNote isolated search/regex service.
 
-The project skill matching this architecture is `skills/macpad-editor/SKILL.md`. Use `skills/macpad-liquid-glass/SKILL.md` only when changing materials, visual chrome or Liquid Glass behavior.
+The project skill matching this architecture is `skills/vibenote-editor/SKILL.md`. Use `skills/vibenote-liquid-glass/SKILL.md` only when changing materials, visual chrome or Liquid Glass behavior.
 
 ## Scope flags
 
@@ -77,8 +77,8 @@ Never use implicit chat memory instead of these files.
 
 Use exactly one of these statuses in tracking files:
 
-- `NPP_ONLY`: present in Notepad++ but not yet in MacPad.
-- `MACPAD_ONLY`: MacPad addition with no Notepad++ equivalent.
+- `NPP_ONLY`: present in Notepad++ but not yet in VibeNote.
+- `VIBENOTE_ONLY`: VibeNote addition with no Notepad++ equivalent.
 - `PARITY_IN_PROGRESS`: partially implemented or behavior still differs.
 - `PARITY_DONE`: implemented, tested and behaviorally accepted.
 - `DEFERRED`: intentionally postponed by scope flags.
@@ -89,7 +89,7 @@ Use exactly one of these statuses in tracking files:
 
 1. Pick one feature ID from the parity matrix.
 2. Read its Notepad++ behavior/source reference.
-3. Record the expected behavior and MacPad acceptance criteria before coding.
+3. Record the expected behavior and VibeNote acceptance criteria before coding.
 4. Implement the domain/service contract first when the feature has non-UI logic.
 5. Implement the native UI and command/menu wiring.
 6. Add or update keyboard shortcuts and menu validation.
@@ -178,7 +178,7 @@ When asked to continue:
 Session:
 Feature IDs:
 Notepad++ behavior matched:
-MacPad behavior added:
+VibeNote behavior added:
 Remaining gap:
 Files changed:
 Tests/build:

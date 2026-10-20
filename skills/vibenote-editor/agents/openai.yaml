@@ -1,0 +1,4 @@
+interface:
+  display_name: "VibeNote Editor"
+  short_description: "Build the complete native editor and parity workflow"
+  default_prompt: "Use $vibenote-editor to implement a VibeNote feature with Notepad++ parity, native macOS behavior, tests, and tracking updates."

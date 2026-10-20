@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="assets/design/logo.svg" width="112" alt="MacPad logo">
+  <img src="assets/design/logo.svg" width="112" alt="VibeNote logo">
 </p>
 
-# MacPad
+# VibeNote
 
 **A familiar text-editing workflow, built to feel at home on macOS.**
 
-MacPad is a native text and source-code editor for the moments when a note becomes a script, one file becomes several, and a simple search needs a regular expression. Inspired by Notepad++ workflows, it uses Swift and AppKit with Mac menus, shortcuts, and document tabs.
+VibeNote is a native text and source-code editor for the moments when a note becomes a script, one file becomes several, and a simple search needs a regular expression. Inspired by Notepad++ workflows, it uses Swift and AppKit with Mac menus, shortcuts, and document tabs.
 
 ![macOS 13+](https://img.shields.io/badge/macOS-13%2B-111827?logo=apple)
 ![Swift and AppKit](https://img.shields.io/badge/Swift-AppKit-F05138?logo=swift&logoColor=white)
@@ -21,7 +21,7 @@ MacPad is a native text and source-code editor for the moments when a note becom
 - **Choose a readable workspace.** Font and color settings, Light/Dark modes, and themes including Dracula, Nord, Solarized, and One Dark.
 - **Resume your work.** Session checkpoints and restoration, plus external-change detection with Reload / Keep Local choices.
 
-MacPad has its own branding and implementation. It is an independent project, not an official Notepad++ port.
+VibeNote has its own branding and implementation. It is an independent project, not an official Notepad++ port.
 
 ## Run from source
 
@@ -30,14 +30,14 @@ Requires **macOS 13+** and **Xcode with Swift 5.9 or later**.
 ```sh
 git clone https://github.com/hiepkhach1005/Notepad.git
 cd Notepad
-swift run MacPad
+swift run VibeNote
 ```
 
 To package a local development app:
 
 ```sh
 ./scripts/build-app.sh
-open dist/MacPad.app
+open dist/VibeNote.app
 ```
 
 You can also open `Package.swift` in Xcode. The generated `.app` is an unsigned development bundle; signing and notarization remain release work.

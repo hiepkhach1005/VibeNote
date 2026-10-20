@@ -6,7 +6,7 @@
 - Official manual: https://npp-user-manual.org/docs/
 - Repository license: https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/LICENSE
 
-The official repository currently exposes the main Windows application under `PowerEditor` and includes `scintilla`, `lexilla` and `boostregex` components. These are reference points for behavior and feature discovery, not a license to copy implementation into MacPad without a deliberate licensing review.
+The official repository currently exposes the main Windows application under `PowerEditor` and includes `scintilla`, `lexilla` and `boostregex` components. These are reference points for behavior and feature discovery, not a license to copy implementation into VibeNote without a deliberate licensing review.
 
 ## Audit procedure
 
@@ -21,11 +21,11 @@ When a feature is missing from the matrix:
 
 ## Scope interpretation
 
-MacPad targets complete built-in user-facing parity. Plugin loading, Notepad++ plugin compatibility, Windows Registry/shell integration and extreme performance engineering remain explicitly deferred unless the project scope changes.
+VibeNote targets complete built-in user-facing parity. Plugin loading, Notepad++ plugin compatibility, Windows Registry/shell integration and extreme performance engineering remain explicitly deferred unless the project scope changes.
 
 ## Legal and identity boundary
 
 - Do not ship the Notepad++ name, logo, icon or copied branding.
-- Do not copy source code or assets into MacPad without a licensing decision.
-- Preserve familiar information architecture and behavior, but use MacPad branding and native macOS controls.
+- Do not copy source code or assets into VibeNote without a licensing decision.
+- Preserve familiar information architecture and behavior, but use VibeNote branding and native macOS controls.
 - Track any reused third-party grammar/library and its license.

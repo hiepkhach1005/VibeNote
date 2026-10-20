@@ -1,16 +1,16 @@
 # Feature Parity Matrix
 
-Statuses: `NPP_ONLY`, `MACPAD_ONLY`, `PARITY_IN_PROGRESS`, `PARITY_DONE`, `DEFERRED`, `NOT_APPLICABLE`, `BLOCKED`.
+Statuses: `NPP_ONLY`, `VIBENOTE_ONLY`, `PARITY_IN_PROGRESS`, `PARITY_DONE`, `DEFERRED`, `NOT_APPLICABLE`, `BLOCKED`.
 
-| ID | Category | Notepad++ capability | MacPad status | MacPad capability/current implementation | Remaining gap / acceptance test |
+| ID | Category | Notepad++ capability | VibeNote status | VibeNote capability/current implementation | Remaining gap / acceptance test |
 |---|---|---|---|---|---|
 | FILE-001 | File | New document | PARITY_DONE | New tab creates an untitled document | Add template/language variants |
-| FILE-002 | File | Open one or many files | PARITY_DONE | Native Open panel supports multiple files, routes into the existing MacPad instance and deduplicates already-open URLs | Add recent-file integration |
+| FILE-002 | File | Open one or many files | PARITY_DONE | Native Open panel supports multiple files, routes into the existing VibeNote instance and deduplicates already-open URLs | Add recent-file integration |
 | FILE-003 | File | Save | PARITY_DONE | Native atomic save writes selected document with tracked encoding/BOM/EOL | Add loss-warning and file type policy |
 | FILE-004 | File | Save As | PARITY_DONE | Native Save panel writes a new path | Add file type/extension policy |
 | FILE-005 | File | Save a Copy As | PARITY_DONE | Native Save a Copy As writes a copy without changing the active document URL/state | Add copy conflict confirmation |
 | FILE-006 | File | Save All | PARITY_IN_PROGRESS | Basic Save All exists | Handle multiple untitled documents and report per-file result |
-| FILE-007 | File | Close and unsaved confirmation | PARITY_IN_PROGRESS | Closing an individual tab keeps the Save/Cancel/Discard sheet; closing the MacPad window/app checkpoints recovery and exits without a prompt | Add multi-document close reporting and recovery UI |
+| FILE-007 | File | Close and unsaved confirmation | PARITY_IN_PROGRESS | Closing an individual tab keeps the Save/Cancel/Discard sheet; closing the VibeNote window/app checkpoints recovery and exits without a prompt | Add multi-document close reporting and recovery UI |
 | FILE-008 | File | Close multiple tabs | PARITY_IN_PROGRESS | Close All plus tab context actions for unchanged, except-current and left/right groups | Add bulk confirmation/reporting and pinned-tab policy |
 | FILE-009 | File | Reload from disk | PARITY_DONE | File menu and Command-Option-R reload selected document with confirmation | Add cursor/selection restoration |
 | FILE-010 | File | External change monitoring | PARITY_DONE | Polls file snapshot and offers Reload/Keep Local | Replace polling with event stream later if needed |
@@ -44,8 +44,8 @@ Statuses: `NPP_ONLY`, `MACPAD_ONLY`, `PARITY_IN_PROGRESS`, `PARITY_DONE`, `DEFER
 | SEARCH-007 | Search | Search Results panel | NPP_ONLY | Not implemented | Click result opens file/line |
 | SEARCH-008 | Search | Count/mark all matches | PARITY_IN_PROGRESS | Find panel Count plus Notepad++-style Smart Highlighting for every occurrence of the selected token, using a non-destructive background overlay and a View toggle | Add persistent Style All Occurrences/mark styles and Search Results integration |
 | SEARCH-009 | Search | Go to line/position | PARITY_IN_PROGRESS | Go to line dialog exists | Add column/byte/selection semantics |
-| VIEW-001 | View | Tab bar and tab context menu | PARITY_IN_PROGRESS | One MacPad window always shows a visible AppKit tab strip, including the single-document case, with selected/modified/pinned state, close buttons, middle-click close, capped/truncated long titles and full-name hover tooltips | Add drag reorder, tab colors, lock state and full visual acceptance on Light/Dark Mode |
-| VIEW-002 | View | Document switcher/MRU | PARITY_IN_PROGRESS | Next/Previous Tab commands and single-instance activation are available; files opened while MacPad is running stay in the same app | Add a dedicated keyboard MRU/document switcher |
+| VIEW-001 | View | Tab bar and tab context menu | PARITY_IN_PROGRESS | One VibeNote window always shows a visible AppKit tab strip, including the single-document case, with selected/modified/pinned state, close buttons, middle-click close, capped/truncated long titles and full-name hover tooltips | Add drag reorder, tab colors, lock state and full visual acceptance on Light/Dark Mode |
+| VIEW-002 | View | Document switcher/MRU | PARITY_IN_PROGRESS | Next/Previous Tab commands and single-instance activation are available; files opened while VibeNote is running stay in the same app | Add a dedicated keyboard MRU/document switcher |
 | VIEW-003 | View | Split/dual view | NPP_ONLY | Not implemented | Move/clone and synchronized scrolling |
 | VIEW-004 | View | Document list | NPP_ONLY | Not implemented | Sidebar/panel with sorting |
 | VIEW-005 | View | Folder as Workspace | NPP_ONLY | Not implemented | Native folder tree and file actions |
@@ -69,7 +69,7 @@ Statuses: `NPP_ONLY`, `MACPAD_ONLY`, `PARITY_IN_PROGRESS`, `PARITY_DONE`, `DEFER
 | LANGUAGE-006 | Language | Function/symbol parsing | NPP_ONLY | Not implemented | Function List integration |
 | SETTINGS-001 | Settings | Preferences | PARITY_IN_PROGRESS | Native Text Settings window persists editor font family, size, text/background/selection/smart-highlight colors and syntax colors across all tabs | Add complete Preferences sections, import/export, accessibility audit and per-language scopes |
 | SETTINGS-002 | Settings | Shortcut Mapper | NPP_ONLY | Not implemented | Command registry-backed customization |
-| SETTINGS-003 | Settings | Style Configurator/themes | PARITY_IN_PROGRESS | Text Settings provides persisted MacPad System, Light, Dark, Dracula, Nord, Solarized, One Dark and Custom palettes; Light uses a clean white editor surface and Dark uses a stable dark surface | Add full Notepad++-style per-language Style Configurator and theme import/export |
+| SETTINGS-003 | Settings | Style Configurator/themes | PARITY_IN_PROGRESS | Text Settings provides persisted VibeNote System, Light, Dark, Dracula, Nord, Solarized, One Dark and Custom palettes; Light uses a clean white editor surface and Dark uses a stable dark surface | Add full Notepad++-style per-language Style Configurator and theme import/export |
 | SETTINGS-004 | Settings | Toolbar customization | PARITY_IN_PROGRESS | Native customization enabled | Map all supported commands |
 | SETTINGS-005 | Settings | Localization | NPP_ONLY | Not implemented | English/Vietnamese string catalog |
 | SETTINGS-006 | Settings | Import/export settings | NPP_ONLY | Not implemented | Versioned settings schema |

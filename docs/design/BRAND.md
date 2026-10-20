@@ -1,8 +1,8 @@
-# MacPad Brand Direction
+# VibeNote Brand Direction
 
 ## Working name
 
-MacPad is a temporary working name. It must be replaced if it conflicts with an existing product or trademark.
+VibeNote is a temporary working name. It must be replaced if it conflicts with an existing product or trademark.
 
 ## Direction
 

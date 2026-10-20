@@ -8,4 +8,4 @@ Keep the recognizable Notepad++ information architecture:
 - Preserve names and concepts so migration is predictable.
 - Adapt shortcuts to Command-based macOS conventions.
 - Use AppKit windows, sheets, menus, toolbar items, `NSSplitView`, native colors and accessibility.
-- Use the `$macpad-liquid-glass` skill for materials; do not duplicate its rules here.
+- Use the `$vibenote-liquid-glass` skill for materials; do not duplicate its rules here.

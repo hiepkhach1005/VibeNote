@@ -9,9 +9,9 @@
 - [~] Add full find/replace panel (native popup is available from menu and toolbar Search/Find & Replace actions; file search and result panel pending).
 - [~] Add Notepad++-style Smart Highlighting for the selected token (automatic occurrence overlay is available; persistent Style All Occurrences remains).
 - [~] Add unit tests for document loading and saving (tests added; XCTest blocked by active Command Line Tools).
-- [~] Enforce one MacPad application instance with a visible multi-document tab strip (middle-click close is implemented; drag reorder, colors, lock and MRU remain).
+- [~] Enforce one VibeNote application instance with a visible multi-document tab strip (middle-click close is implemented; drag reorder, colors, lock and MRU remain).
 - [~] Keep toolbar compact with right-aligned icon-only controls, fast hover labels and full-name tooltips for long tab titles.
-- [~] Accept one or many files dragged from Finder anywhere over MacPad and route them into existing tabs (implementation complete; packaged-app Finder/Open With acceptance pending).
+- [~] Accept one or many files dragged from Finder anywhere over VibeNote and route them into existing tabs (implementation complete; packaged-app Finder/Open With acceptance pending).
 
 ## P1 - Editor functionality
 

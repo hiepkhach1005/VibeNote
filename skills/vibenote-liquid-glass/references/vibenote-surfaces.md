@@ -1,4 +1,4 @@
-# MacPad Surface Decisions
+# VibeNote Surface Decisions
 
 | Surface | Default treatment | Reason |
 |---|---|---|

@@ -1,8 +1,8 @@
 import XCTest
 import AppKit
-@testable import MacPad
+@testable import VibeNote
 
-final class MacPadTests: XCTestCase {
+final class VibeNoteTests: XCTestCase {
     func testNewDocumentDefaults() {
         let document = EditorDocument()
 
@@ -25,7 +25,7 @@ final class MacPadTests: XCTestCase {
     }
 
     func testDocumentStoreCapturesFileSnapshot() throws {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("macpad-snapshot-test-\(UUID().uuidString).txt")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("vibenote-snapshot-test-\(UUID().uuidString).txt")
         defer { try? FileManager.default.removeItem(at: url) }
 
         let document = EditorDocument(content: "hello")
@@ -67,7 +67,7 @@ final class MacPadTests: XCTestCase {
     }
 
     func testDocumentStorePreservesCRLFAndBOM() throws {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("macpad-eol-test-\(UUID().uuidString).txt")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("vibenote-eol-test-\(UUID().uuidString).txt")
         defer { try? FileManager.default.removeItem(at: url) }
 
         let document = EditorDocument(content: "one\ntwo", encoding: .utf8, lineEnding: .crlf, hasBOM: true)
@@ -85,11 +85,11 @@ final class MacPadTests: XCTestCase {
     }
 
     func testFileDropPayloadAcceptsExtensionlessFilesAndDeduplicatesURLs() throws {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("macpad-drop-\(UUID().uuidString)")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("vibenote-drop-\(UUID().uuidString)")
         defer { try? FileManager.default.removeItem(at: url) }
         try Data("dropped text".utf8).write(to: url)
 
-        let pasteboard = NSPasteboard(name: NSPasteboard.Name("MacPadDropTest-\(UUID().uuidString)"))
+        let pasteboard = NSPasteboard(name: NSPasteboard.Name("VibeNoteDropTest-\(UUID().uuidString)"))
         pasteboard.clearContents()
         pasteboard.writeObjects([url as NSURL, url as NSURL])
 
@@ -97,11 +97,11 @@ final class MacPadTests: XCTestCase {
     }
 
     func testFileDropPayloadRejectsDirectories() throws {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("macpad-drop-directory-\(UUID().uuidString)")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("vibenote-drop-directory-\(UUID().uuidString)")
         defer { try? FileManager.default.removeItem(at: url) }
         try FileManager.default.createDirectory(at: url, withIntermediateDirectories: false)
 
-        let pasteboard = NSPasteboard(name: NSPasteboard.Name("MacPadDropTest-\(UUID().uuidString)"))
+        let pasteboard = NSPasteboard(name: NSPasteboard.Name("VibeNoteDropTest-\(UUID().uuidString)"))
         pasteboard.clearContents()
         pasteboard.writeObjects([url as NSURL])
 
@@ -109,11 +109,11 @@ final class MacPadTests: XCTestCase {
     }
 
     func testFileDropPayloadReadsLegacyFinderFileNames() throws {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("macpad-legacy-drop-\(UUID().uuidString).txt")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("vibenote-legacy-drop-\(UUID().uuidString).txt")
         defer { try? FileManager.default.removeItem(at: url) }
         try Data("legacy Finder payload".utf8).write(to: url)
 
-        let pasteboard = NSPasteboard(name: NSPasteboard.Name("MacPadLegacyDropTest-\(UUID().uuidString)"))
+        let pasteboard = NSPasteboard(name: NSPasteboard.Name("VibeNoteLegacyDropTest-\(UUID().uuidString)"))
         pasteboard.clearContents()
         pasteboard.setPropertyList([url.path], forType: FileDropPayload.legacyFileNamesType)
 
@@ -122,7 +122,7 @@ final class MacPadTests: XCTestCase {
     }
 
     func testFileDropPayloadDoesNotTreatPlainDraggedTextAsAFile() throws {
-        let pasteboard = NSPasteboard(name: NSPasteboard.Name("MacPadTextDropTest-\(UUID().uuidString)"))
+        let pasteboard = NSPasteboard(name: NSPasteboard.Name("VibeNoteTextDropTest-\(UUID().uuidString)"))
         pasteboard.clearContents()
         pasteboard.setString("/tmp/example.txt", forType: .string)
 
@@ -131,11 +131,11 @@ final class MacPadTests: XCTestCase {
     }
 
     func testFileDropPayloadCanReadVSCodePlainPathDuringExternalDrag() throws {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("macpad-vscode-drop-\(UUID().uuidString).swift")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("vibenote-vscode-drop-\(UUID().uuidString).swift")
         defer { try? FileManager.default.removeItem(at: url) }
         try Data("let value = 1".utf8).write(to: url)
 
-        let pasteboard = NSPasteboard(name: NSPasteboard.Name("MacPadVSCodeDropTest-\(UUID().uuidString)"))
+        let pasteboard = NSPasteboard(name: NSPasteboard.Name("VibeNoteVSCodeDropTest-\(UUID().uuidString)"))
         pasteboard.clearContents()
         pasteboard.setString(url.path, forType: .string)
 
@@ -197,7 +197,7 @@ final class MacPadTests: XCTestCase {
 
     func testTextSettingsRoundTripPreservesFontAndPalette() throws {
         var settings = TextSettings(fontFamily: "SF Mono", fontSize: 16, theme: .custom)
-        settings.setColor(NSColor(macPadHex: "#123456"), for: .foreground, appearance: NSApp?.effectiveAppearance)
+        settings.setColor(NSColor(vibeNoteHex: "#123456"), for: .foreground, appearance: NSApp?.effectiveAppearance)
 
         let data = try JSONEncoder().encode(settings)
         let restored = try JSONDecoder().decode(TextSettings.self, from: data)
@@ -209,7 +209,7 @@ final class MacPadTests: XCTestCase {
     }
 
     func testTextColorHexRoundTrip() {
-        XCTAssertEqual(NSColor(macPadHex: "#282A36").macPadHex, "#282A36")
+        XCTAssertEqual(NSColor(vibeNoteHex: "#282A36").vibeNoteHex, "#282A36")
     }
 
     func testTextSettingsDefaultPaletteIsHighContrast() {
@@ -242,6 +242,6 @@ final class MacPadTests: XCTestCase {
         palette.ensureReadableContrast()
 
         XCTAssertEqual(palette.foreground, "#111827")
-        XCTAssertGreaterThan(NSColor(macPadHex: palette.foreground).contrastRatio(with: NSColor(macPadHex: palette.background)), 4.5)
+        XCTAssertGreaterThan(NSColor(vibeNoteHex: palette.foreground).contrastRatio(with: NSColor(vibeNoteHex: palette.background)), 4.5)
     }
 }

@@ -14,7 +14,7 @@
 - Text contrast is guarded at runtime and on persistence; a complete Light/Dark accessibility and color-role audit is still pending.
 - The line-number gutter no longer overlays editor content; large-document gutter calculation is still linear and belongs to later performance work.
 - Settings and tab focus is now restored to the selected editor after dismissal/selection; full keyboard-only and VoiceOver acceptance remains pending.
-- Closing the main window or quitting MacPad now saves a single automatic recovery session and exits without a save dialog; named sessions, crash markers and a recovery UI are still planned. Individual tab close continues to protect modified notes with confirmation.
+- Closing the main window or quitting VibeNote now saves a single automatic recovery session and exits without a save dialog; named sessions, crash markers and a recovery UI are still planned. Individual tab close continues to protect modified notes with confirmation.
 - Full TextKit 2/custom storage integration is planned, not complete.
 - Automated XCTest cannot run in the current environment because only `/Library/Developer/CommandLineTools` is selected; install/select full Xcode to run `swift test`.
 - External file monitoring currently uses a two-second snapshot poll; native event-driven monitoring is a later refinement.
