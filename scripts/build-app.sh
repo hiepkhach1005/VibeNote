@@ -48,6 +48,8 @@ cat > "$APP_DIR/Contents/Info.plist" <<'PLIST'
 	<string>0.1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2026 Bá Vương. All rights reserved.</string>
 	<key>LSMultipleInstancesProhibited</key>
 	<true/>
 	<key>LSMinimumSystemVersion</key>
